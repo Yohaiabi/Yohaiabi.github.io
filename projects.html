@@ -9,52 +9,17 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="css/styles.css" />
-    <style>
-      /* Container for the project image */
-      .project-image-container {
-        width: 100%;
-        padding-top: 75%; /* 4:3 aspect ratio */
-        position: relative;
-        overflow: hidden;
-        cursor: pointer;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      }
-
-      /* Background image styling to fit in the container */
-      .project-image-container::before {
-        content: "";
-        background-image: url("assets/project1.png");
-        background-size: contain; /* Scale the image to fit inside the container */
-        background-position: center;
-        background-repeat: no-repeat;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        transition: transform 0.5s ease;
-      }
-
-      /* Zoom effect on hover */
-      .project-image-container:hover::before {
-        transform: scale(1.1); /* Slightly zoom in */
-      }
-    </style>
   </head>
   <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container">
-        <a class="navbar-brand" href="index.html">My Portfolio</a>
+        <a class="navbar-brand fw-bold" href="index.html">Yohai Abramovitz</a>
         <button
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -67,7 +32,7 @@
               <a class="nav-link" href="projects.html">Projects</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact Me</a>
+              <a class="nav-link" href="contact.html">Contact</a>
             </li>
           </ul>
         </div>
@@ -81,35 +46,52 @@
         <p class="text-center text-muted">
           Here are some of the projects I've worked on.
         </p>
-        <div class="row">
-          <!-- Sample Project Card with Zoom Effect -->
-          <div class="col-md-4">
+        <div class="row justify-content-center">
+          <!-- Project Card Example -->
+          <div class="col-md-6 col-lg-4 mb-4">
             <div class="card project-card">
-              <div class="project-image-container"></div>
+              <img
+                src="assets/project1.png"
+                alt="Project 1"
+                class="project-image"
+              />
               <div class="card-body">
-                <h5 class="card-title">Project 1</h5>
+                <h5 class="card-title">Fun Facts App (React)</h5>
                 <p class="card-text">
-                  My first React project - A site with a fun facts. Interactive
-                  - users can add facts, filter it by categories and click on
-                  emojies for each fact.
+                  A dynamic facts-sharing website where users can view, vote,
+                  and add facts. Built using React with category filters and
+                  emoji-based feedback.
                 </p>
                 <a
                   href="https://yohaiabi.github.io/Facts/"
-                  class="btn btn-outline-primary"
-                  >View</a
+                  class="btn btn-primary"
+                  >Live Demo</a
+                >
+                <a
+                  href="https://github.com/yohaiabi/Facts"
+                  class="btn btn-outline-secondary ms-2"
+                  >GitHub</a
                 >
               </div>
             </div>
           </div>
-          <!-- I need to Add more projects here -->
+
+          <!-- Placeholder for additional projects -->
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card project-card">
+              <div class="card-body text-center">
+                <p class="text-muted">More projects coming soon...</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer text-center py-3">
+    <footer class="footer text-center py-4">
       <div class="container">
-        <p>&copy; 2025 Yohai - All Rights Reserved</p>
+        <p>&copy; 2025 Yohai. All rights reserved.</p>
       </div>
     </footer>
 
