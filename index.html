@@ -12,7 +12,7 @@
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
       <div class="container">
         <a class="navbar-brand fw-bold" href="#">Yohai Abramovitz</a>
         <button
@@ -26,48 +26,56 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
+              <a class="nav-link" href="#projects">Projects</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="projects.html">Projects</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
+              <a class="nav-link" href="#contact">Contact</a>
             </li>
           </ul>
         </div>
+        <button id="themeToggle" class="btn btn-outline-secondary btn-sm ms-2">
+          🌙
+        </button>
       </div>
     </nav>
 
-    <!-- Hero -->
-    <header class="hero">
+    <!-- Hero Section -->
+    <header class="hero text-center py-5">
       <div class="container">
-        <h1>Welcome to My Portfolio</h1>
-        <p>Information Systems Student | Data Science Enthusiast</p>
-        <a href="projects.html" class="btn btn-outline-light mt-3"
-          >Explore My Projects</a
-        >
+        <h1 class="display-4 fw-bold mb-2">Yohai Abramovitz</h1>
+        <p class="lead mb-3">
+          Information Systems Student | Data Science & Analytics
+        </p>
+        <p class="personal-summary mx-auto" style="max-width: 600px">
+          Final-year Information Systems student specializing in Data Science
+          and Analytics.<br />
+          Skilled in Python, SQL, Machine Learning, and Power BI.<br />
+          Passionate about turning raw data into impactful insights that drive
+          smart decisions.
+        </p>
+        <a href="#projects" class="btn btn-primary mt-3">Explore My Work</a>
       </div>
     </header>
 
-    <!-- Projects Preview Section (optional) -->
-    <section class="py-5">
+    <!-- Projects Section -->
+    <section id="projects" class="py-5">
       <div class="container">
-        <h2 class="text-center mb-4">Featured Project</h2>
-        <div class="row justify-content-center">
-          <div class="col-md-6">
-            <div class="card project-card">
+        <h2 class="card h-100 project-card reveal">Projects</h2>
+        <div class="row g-4">
+          <!-- Project 1 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 project-card">
               <img
-                src="assets/project1.png"
-                alt="Project 1"
+                src="assets/fun-facts.png"
                 class="project-image"
+                alt="Fun Facts App"
               />
               <div class="card-body">
-                <h5 class="card-title">Fun Facts App (React)</h5>
+                <h5 class="card-title">Fun Facts Web App (React)</h5>
                 <p class="card-text">
-                  A dynamic facts-sharing website where users can view, vote,
-                  and add facts. Built using React with category filters and
-                  emoji-based feedback.
+                  Full‑stack React application for sharing interesting facts.
+                  Users can browse, vote with emojis, add facts, and filter by
+                  category, backed by SupaBase real‑time database.
                 </p>
                 <a
                   href="https://yohaiabi.github.io/Facts/"
@@ -75,19 +83,93 @@
                   >Live Demo</a
                 >
                 <a
-                  href="https://github.com/yohaiabi/Facts"
+                  href="https://github.com/Yohaiabi/Facts"
                   class="btn btn-outline-secondary ms-2"
                   >GitHub</a
                 >
               </div>
             </div>
           </div>
-        </div>
-        <!-- Placeholder for more project cards -->
-        <div class="row mt-5">
-          <div class="col text-center">
-            <p class="text-muted">More projects coming soon...</p>
+
+          <!-- Project 2 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 project-card">
+              <img
+                src="assets/football-manager.png"
+                class="project-image"
+                alt="Football Tournament Manager"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Football Tournament Manager</h5>
+                <p class="card-text">
+                  Java‑based CLI system for managing football tournaments via
+                  structured input/output files. Implements OOP design, enums,
+                  generics and collections to handle teams, players and matches.
+                </p>
+                <a
+                  href="https://github.com/Yohaiabi/football-tournament-system"
+                  class="btn btn-outline-secondary"
+                  >GitHub</a
+                >
+              </div>
+            </div>
           </div>
+
+          <!-- Project 3 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 project-card">
+              <img
+                src="assets/hotel-agent.png"
+                class="project-image"
+                alt="Hotel Search Agent"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Hotel Search Agent (WIP)</h5>
+                <p class="card-text">
+                  Interactive AI chatbot that leverages Hotels.com API, Geoapify
+                  geocoding and LLM chains to provide personalised hotel
+                  recommendations and price alerts.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 project-card">
+              <img
+                src="assets/weather-analysis.png"
+                class="project-image"
+                alt="OpenWeather Analysis"
+              />
+              <div class="card-body">
+                <h5 class="card-title">OpenWeather API Data Analysis (WIP)</h5>
+                <p class="card-text">
+                  Colab notebook analysing weather data from OpenWeather API
+                  with Python and Matplotlib, producing insightful
+                  visualisations and summaries.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center mb-4">Contact</h2>
+        <p class="text-center text-muted mb-4">
+          Feel free to connect with me through the links below.
+        </p>
+        <div class="d-flex justify-content-center gap-3">
+          <a href="https://github.com/Yohaiabi" class="btn btn-dark">GitHub</a>
+          <a
+            href="https://www.linkedin.com/in/yohaii/"
+            class="btn btn-outline-dark"
+            >LinkedIn</a
+          >
         </div>
       </div>
     </section>
@@ -95,10 +177,12 @@
     <!-- Footer -->
     <footer class="footer text-center py-4">
       <div class="container">
-        <p>&copy; 2025 Yohai. All rights reserved.</p>
+        <p class="mb-0">&copy; 2025 Yohai Abramovitz. All rights reserved.</p>
       </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <button id="backToTop" title="Back to top">↑</button>
+    <script src="js/main.js"></script>
   </body>
 </html>
