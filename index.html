@@ -4,17 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Yohai Abramovitz | Portfolio</title>
+
+    <!-- Bootstrap & custom CSS -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
+
   <body>
-    <!-- Navbar -->
+    <!-- ===== Navbar ===== -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
       <div class="container">
         <a class="navbar-brand fw-bold" href="#">Yohai Abramovitz</a>
+
         <button
           class="navbar-toggler"
           type="button"
@@ -23,6 +27,7 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
@@ -33,38 +38,43 @@
             </li>
           </ul>
         </div>
+        <!-- Dark-mode toggle -->
         <button id="themeToggle" class="btn btn-outline-secondary btn-sm ms-2">
           🌙
         </button>
       </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- ===== Hero ===== -->
     <header class="hero text-center py-5">
       <div class="container">
         <h1 class="display-4 fw-bold mb-2">Yohai Abramovitz</h1>
         <p class="lead mb-3">
-          Information Systems Student | Data Science & Analytics
+          Information Systems Student&nbsp;|&nbsp;Data
+          Science&nbsp;&amp;&nbsp;Analytics
         </p>
+
         <p class="personal-summary mx-auto" style="max-width: 600px">
           Final-year Information Systems student specializing in Data Science
           and Analytics.<br />
-          Skilled in Python, SQL, Machine Learning, and Power BI.<br />
+          Skilled in Python, SQL, Machine Learning, and Power&nbsp;BI.<br />
           Passionate about turning raw data into impactful insights that drive
           smart decisions.
         </p>
-        <a href="#projects" class="btn btn-primary mt-3">Explore My Work</a>
+
+        <a href="#projects" class="btn btn-primary mt-3">View Projects</a>
       </div>
     </header>
 
-    <!-- Projects Section -->
+    <!-- ===== Projects ===== -->
     <section id="projects" class="py-5">
       <div class="container">
-        <h2 class="card h-100 project-card reveal">Projects</h2>
+        <h2 class="text-center mb-4 reveal">Projects</h2>
+
         <div class="row g-4">
-          <!-- Project 1 -->
+          <!-- Project 1 – React -->
           <div class="col-md-6 col-lg-4">
-            <div class="card h-100 project-card">
+            <div class="card h-100 project-card reveal">
               <img
                 src="assets/fun-facts.png"
                 class="project-image"
@@ -73,9 +83,9 @@
               <div class="card-body">
                 <h5 class="card-title">Fun Facts Web App (React)</h5>
                 <p class="card-text">
-                  Full‑stack React application for sharing interesting facts.
+                  Full-stack React application for sharing interesting facts.
                   Users can browse, vote with emojis, add facts, and filter by
-                  category, backed by SupaBase real‑time database.
+                  category, backed by SupaBase real-time database.
                 </p>
                 <a
                   href="https://yohaiabi.github.io/Facts/"
@@ -91,9 +101,9 @@
             </div>
           </div>
 
-          <!-- Project 2 -->
+          <!-- Project 2 – Java -->
           <div class="col-md-6 col-lg-4">
-            <div class="card h-100 project-card">
+            <div class="card h-100 project-card reveal">
               <img
                 src="assets/football-manager.png"
                 class="project-image"
@@ -102,7 +112,7 @@
               <div class="card-body">
                 <h5 class="card-title">Football Tournament Manager</h5>
                 <p class="card-text">
-                  Java‑based CLI system for managing football tournaments via
+                  Java-based CLI system for managing football tournaments via
                   structured input/output files. Implements OOP design, enums,
                   generics and collections to handle teams, players and matches.
                 </p>
@@ -115,9 +125,9 @@
             </div>
           </div>
 
-          <!-- Project 3 -->
+          <!-- Project 3 – Hotel agent -->
           <div class="col-md-6 col-lg-4">
-            <div class="card h-100 project-card">
+            <div class="card h-100 project-card reveal">
               <img
                 src="assets/hotel-agent.png"
                 class="project-image"
@@ -134,9 +144,9 @@
             </div>
           </div>
 
-          <!-- Project 4 -->
+          <!-- Project 4 – Weather analysis -->
           <div class="col-md-6 col-lg-4">
-            <div class="card h-100 project-card">
+            <div class="card h-100 project-card reveal">
               <img
                 src="assets/weather-analysis.png"
                 class="project-image"
@@ -156,14 +166,15 @@
       </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- ===== Contact ===== -->
     <section id="contact" class="contact py-5 bg-light">
       <div class="container">
-        <h2 class="text-center mb-4">Contact</h2>
+        <h2 class="text-center mb-4 reveal">Contact</h2>
         <p class="text-center text-muted mb-4">
           Feel free to connect with me through the links below.
         </p>
-        <div class="d-flex justify-content-center gap-3">
+
+        <div class="d-flex justify-content-center gap-3 reveal">
           <a href="https://github.com/Yohaiabi" class="btn btn-dark">GitHub</a>
           <a
             href="https://www.linkedin.com/in/yohaii/"
@@ -174,13 +185,14 @@
       </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ===== Footer ===== -->
     <footer class="footer text-center py-4">
       <div class="container">
         <p class="mb-0">&copy; 2025 Yohai Abramovitz. All rights reserved.</p>
       </div>
     </footer>
 
+    <!-- ===== Scripts ===== -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <button id="backToTop" title="Back to top">↑</button>
     <script src="js/main.js"></script>
