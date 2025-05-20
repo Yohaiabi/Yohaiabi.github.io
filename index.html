@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
+    <title>Yohai Abramovitz | Portfolio</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
@@ -14,15 +14,12 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container">
-        <a class="navbar-brand" href="#">My Portfolio</a>
+        <a class="navbar-brand fw-bold" href="#">Yohai Abramovitz</a>
         <button
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -35,28 +32,70 @@
               <a class="nav-link" href="projects.html">Projects</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact Me</a>
+              <a class="nav-link" href="contact.html">Contact</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="hero text-center">
+    <!-- Hero -->
+    <header class="hero">
       <div class="container">
-        <h1 class="display-4">Welcome to My Portfolio</h1>
-        <p class="lead">
-          I'm an aspiring developer, showcasing my journey and projects.
-        </p>
-        <a href="projects.html" class="btn btn-primary">View Projects</a>
+        <h1>Welcome to My Portfolio</h1>
+        <p>Information Systems Student | Data Science Enthusiast</p>
+        <a href="projects.html" class="btn btn-outline-light mt-3"
+          >Explore My Projects</a
+        >
       </div>
     </header>
 
-    <!-- Footer -->
-    <footer class="footer text-center py-3">
+    <!-- Projects Preview Section (optional) -->
+    <section class="py-5">
       <div class="container">
-        <p>&copy; 2025 Yohai - All Rights Reserved</p>
+        <h2 class="text-center mb-4">Featured Project</h2>
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <div class="card project-card">
+              <img
+                src="assets/project1.png"
+                alt="Project 1"
+                class="project-image"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Fun Facts App (React)</h5>
+                <p class="card-text">
+                  A dynamic facts-sharing website where users can view, vote,
+                  and add facts. Built using React with category filters and
+                  emoji-based feedback.
+                </p>
+                <a
+                  href="https://yohaiabi.github.io/Facts/"
+                  class="btn btn-primary"
+                  >Live Demo</a
+                >
+                <a
+                  href="https://github.com/yohaiabi/Facts"
+                  class="btn btn-outline-secondary ms-2"
+                  >GitHub</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Placeholder for more project cards -->
+        <div class="row mt-5">
+          <div class="col text-center">
+            <p class="text-muted">More projects coming soon...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer text-center py-4">
+      <div class="container">
+        <p>&copy; 2024 Yohai Abitbul. All rights reserved.</p>
       </div>
     </footer>
 
