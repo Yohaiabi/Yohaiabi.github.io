@@ -3,6 +3,9 @@
 ------------------------------------------------------- */
 :root {
   --accent: #0d6efd; /* Bootstrap primary blue */
+  --bg-dark: #121212; /* global dark bg   */
+  --bg-dark-alt: #1e1e1e; /* cards / contact  */
+  --text-light: #f1f1f1;
 }
 
 body {
@@ -10,6 +13,10 @@ body {
   background-color: #fefefe;
   color: #212529;
   scroll-behavior: smooth;
+}
+.dark {
+  background: var(--bg-dark); /* full-page dark */
+  color: var(--text-light);
 }
 
 /* -------------------------------------------------------
@@ -21,6 +28,10 @@ body {
   padding: 100px 0;
   text-align: center;
 }
+/* darker gradient in dark-mode */
+.dark .hero {
+  background: linear-gradient(135deg, #0d1a32 0%, #112040 100%);
+}
 .hero h1 {
   font-size: 3rem;
   font-weight: 700;
@@ -31,7 +42,7 @@ body {
 }
 
 /* -------------------------------------------------------
-   Navbar Fixes (dark‑mode support)
+   Navbar (light → dark support)
 ------------------------------------------------------- */
 .navbar-light .navbar-nav .nav-link {
   transition: color 0.2s;
@@ -40,25 +51,39 @@ body {
   font-weight: 600;
   border-bottom: 2px solid var(--accent);
 }
+/* dark-mode colours */
+.dark .navbar-light {
+  /* NEW */
+  background: var(--bg-dark-alt) !important;
+}
 .dark .navbar-light .navbar-nav .nav-link,
 .dark .navbar-brand {
-  color: #f1f1f1 !important;
+  color: var(--text-light) !important;
 }
 
 /* -------------------------------------------------------
-   Buttons – ensure contrast in dark mode
+   Buttons – contrast & GitHub hover
 ------------------------------------------------------- */
 .dark .btn-dark {
   background: var(--accent);
   border-color: var(--accent);
 }
 .dark .btn-outline-dark {
-  color: #f1f1f1;
-  border-color: #f1f1f1;
+  color: var(--text-light);
+  border-color: var(--text-light);
 }
 .dark .btn-outline-dark:hover {
-  background: #f1f1f1;
-  color: #121212;
+  background: var(--text-light);
+  color: var(--bg-dark);
+}
+
+/* GitHub buttons (always .btn-dark) → outline-style on hover */
+.btn-dark.github-btn:hover,
+.contact .btn-dark:hover {
+  background: transparent;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  transition: all 0.2s;
 }
 
 /* -------------------------------------------------------
@@ -74,16 +99,17 @@ body {
 .project-card:hover {
   transform: translateY(-5px);
 }
+/* smaller image & fit-contain */
 .project-image {
   width: 100%;
-  height: 200px;
-  object-fit: cover;
+  height: 160px;
+  object-fit: contain;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
 }
 .dark .project-card {
-  background: #1e1e1e;
-  color: #f1f1f1;
+  background: var(--bg-dark-alt);
+  color: var(--text-light);
 }
 
 /* -------------------------------------------------------
@@ -100,7 +126,33 @@ body {
 }
 
 /* -------------------------------------------------------
-   Back‑to‑Top Button
+   Contact Section
+------------------------------------------------------- */
+.contact {
+  background: #f8f9fa;
+} /* default */
+.dark .contact {
+  background: var(--bg-dark-alt);
+  color: var(--text-light);
+}
+.dark .contact p {
+  color: #ccc;
+}
+
+/* -------------------------------------------------------
+   Footer
+------------------------------------------------------- */
+.footer {
+  background-color: #f8f9fa;
+  color: #6c757d;
+}
+.dark .footer {
+  background: var(--bg-dark-alt);
+  color: #999;
+}
+
+/* -------------------------------------------------------
+   Back-to-Top Button
 ------------------------------------------------------- */
 #backToTop {
   position: fixed;
@@ -120,16 +172,4 @@ body {
 #backToTop.visible {
   opacity: 1;
   pointer-events: auto;
-}
-
-/* -------------------------------------------------------
-   Footer
-------------------------------------------------------- */
-.footer {
-  background-color: #f8f9fa;
-  color: #6c757d;
-}
-.dark .footer {
-  background: #1f1f1f;
-  color: #999;
 }
