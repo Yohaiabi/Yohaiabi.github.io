@@ -105,8 +105,8 @@ a[href*="github"].btn-dark {
 }
 
 a[href*="github"].btn-dark:hover {
-  background: #232323 !important; /* slightly darker */
-  border-color: #232323 !important;
+  background: #343a40 !important;
+  border-color: #343a40 !important;
 }
 
 .dark a[href*="github"].btn-dark {
@@ -180,7 +180,7 @@ a[href*="github"].btn-dark:hover {
 
 .dark .contact p,
 .dark .contact .text-muted {
-  color: #d0d0d0;
+  color: var(--text-light);
 }
 
 /* -------------------------------------------------------
@@ -232,4 +232,13 @@ a[href*="github"].btn-dark:hover {
 #backToTop.visible {
   opacity: 1;
   pointer-events: auto;
+}
+
+/* hamburger icon & border visible in dark mode */
+.dark .navbar-light .navbar-toggler-icon {
+  filter: invert(1) brightness(2); /* turns the lines white */
+}
+
+.dark .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.6); /* lighter border */
 }
