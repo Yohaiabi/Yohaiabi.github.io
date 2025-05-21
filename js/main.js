@@ -48,6 +48,14 @@ themeToggle?.addEventListener("click", () => {
   localStorage.setItem("theme", body.classList.contains("dark") ? "dark" : "");
 });
 
+// keyboard accessibility for theme toggle
+themeToggle?.addEventListener("keydown", (e) => {
+  if (e.key === " " || e.key === "Enter") {
+    e.preventDefault();
+    themeToggle.click();
+  }
+});
+
 // -------- Back-to-Top ----------
 const backBtn = document.getElementById("backToTop");
 window.addEventListener("scroll", () => {
@@ -56,5 +64,6 @@ window.addEventListener("scroll", () => {
 backBtn.addEventListener("click", () =>
   window.scrollTo({ top: 0, behavior: "smooth" })
 );
+
 // --- Dynamic year in footer ---
 document.getElementById("year").textContent = new Date().getFullYear();
