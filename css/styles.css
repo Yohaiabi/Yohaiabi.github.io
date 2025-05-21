@@ -1,26 +1,31 @@
 /* -------------------------------------------------------
-   Global Styles
+   Global
 ------------------------------------------------------- */
 :root {
-  --accent: #0d6efd; /* Bootstrap primary blue */
-  --bg-dark: #121212; /* global dark bg   */
-  --bg-dark-alt: #1e1e1e; /* cards / contact  */
+  --accent: #0d6efd; /* Bootstrap blue */
+  --bg-dark: #121212;
+  --bg-dark-alt: #1e1e1e;
+  --bg-dark-grad: linear-gradient(135deg, #0d1a32 0%, #112040 100%);
   --text-light: #f1f1f1;
+  --linkedin: #0a66c2;
+  --linkedin-dark: #6eb0ff; /* visible on dark bg */
 }
 
-body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #fefefe;
-  color: #212529;
+html {
   scroll-behavior: smooth;
 }
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #fefefe;
+  color: #212529;
+}
 .dark {
-  background: var(--bg-dark); /* full-page dark */
+  background: var(--bg-dark);
   color: var(--text-light);
 }
 
 /* -------------------------------------------------------
-   Hero Section
+   Hero
 ------------------------------------------------------- */
 .hero {
   background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
@@ -28,21 +33,12 @@ body {
   padding: 100px 0;
   text-align: center;
 }
-/* darker gradient in dark-mode */
 .dark .hero {
-  background: linear-gradient(135deg, #0d1a32 0%, #112040 100%);
-}
-.hero h1 {
-  font-size: 3rem;
-  font-weight: 700;
-}
-.hero p {
-  font-size: 1.25rem;
-  margin-top: 15px;
+  background: var(--bg-dark-grad);
 }
 
 /* -------------------------------------------------------
-   Navbar (light → dark support)
+   Navbar
 ------------------------------------------------------- */
 .navbar-light .navbar-nav .nav-link {
   transition: color 0.2s;
@@ -51,9 +47,7 @@ body {
   font-weight: 600;
   border-bottom: 2px solid var(--accent);
 }
-/* dark-mode colours */
 .dark .navbar-light {
-  /* NEW */
   background: var(--bg-dark-alt) !important;
 }
 .dark .navbar-light .navbar-nav .nav-link,
@@ -62,12 +56,40 @@ body {
 }
 
 /* -------------------------------------------------------
-   Buttons – contrast & GitHub hover
+   Buttons
 ------------------------------------------------------- */
-.dark .btn-dark {
-  background: var(--accent);
-  border-color: var(--accent);
+/* LinkedIn brand button */
+.btn-linkedin {
+  background: var(--linkedin);
+  border-color: var(--linkedin);
+  color: #fff;
 }
+.btn-linkedin:hover {
+  background: #084d94;
+  border-color: #084d94;
+  color: #fff;
+}
+/* dark-mode ⇆ קונטרסט */
+.dark .btn-linkedin {
+  background: var(--linkedin-dark);
+  border-color: var(--linkedin-dark);
+  color: #121212;
+}
+.dark .btn-linkedin:hover {
+  background: #8cc4ff;
+  border-color: #8cc4ff;
+  color: #121212;
+}
+
+/* GitHub buttons */
+.btn-dark.github-btn:hover,
+.contact .btn-dark:hover {
+  background: transparent;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  transition: all 0.2s;
+}
+/* improve dark-mode contrast */
 .dark .btn-outline-dark {
   color: var(--text-light);
   border-color: var(--text-light);
@@ -77,21 +99,12 @@ body {
   color: var(--bg-dark);
 }
 
-/* GitHub buttons (always .btn-dark) → outline-style on hover */
-.btn-dark.github-btn:hover,
-.contact .btn-dark:hover {
-  background: transparent;
-  color: var(--accent);
-  border: 2px solid var(--accent);
-  transition: all 0.2s;
-}
-
 /* -------------------------------------------------------
    Project Cards
 ------------------------------------------------------- */
 .project-card {
   transition: transform 0.2s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   border: none;
   border-radius: 6px;
   background: #ffffff;
@@ -99,17 +112,31 @@ body {
 .project-card:hover {
   transform: translateY(-5px);
 }
-/* smaller image & fit-contain */
+
 .project-image {
   width: 100%;
-  height: 160px;
-  object-fit: contain;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
 }
 .dark .project-card {
   background: var(--bg-dark-alt);
   color: var(--text-light);
+}
+
+/* -------------------------------------------------------
+   Contact
+------------------------------------------------------- */
+.contact {
+  background: #f8f9fa;
+}
+.dark .contact {
+  background: var(--bg-dark-grad);
+  color: var(--text-light);
+}
+.dark .contact p {
+  color: #d0d0d0;
 }
 
 /* -------------------------------------------------------
@@ -126,24 +153,10 @@ body {
 }
 
 /* -------------------------------------------------------
-   Contact Section
-------------------------------------------------------- */
-.contact {
-  background: #f8f9fa;
-} /* default */
-.dark .contact {
-  background: var(--bg-dark-alt);
-  color: var(--text-light);
-}
-.dark .contact p {
-  color: #ccc;
-}
-
-/* -------------------------------------------------------
    Footer
 ------------------------------------------------------- */
 .footer {
-  background-color: #f8f9fa;
+  background: #f8f9fa;
   color: #6c757d;
 }
 .dark .footer {
@@ -152,7 +165,7 @@ body {
 }
 
 /* -------------------------------------------------------
-   Back-to-Top Button
+   Back-to-Top
 ------------------------------------------------------- */
 #backToTop {
   position: fixed;
