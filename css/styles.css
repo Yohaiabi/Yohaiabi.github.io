@@ -232,3 +232,7 @@ a[href*="github"].btn-dark:hover {
   opacity: 1;
   pointer-events: auto;
 }
+
+.project-card:hover {
+  transform: perspective(600px) rotateX(2deg) translateY(-6px);
+}
