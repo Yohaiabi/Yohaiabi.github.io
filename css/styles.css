@@ -2,7 +2,7 @@
    Root Variables
 ------------------------------------------------------- */
 :root {
-  --accent: #0d6efd; /* Bootstrap blue */
+  --accent: #0d6efd;
   --bg-dark: #121212;
   --bg-dark-alt: #1e1e1e;
   --bg-dark-grad: linear-gradient(135deg, #0d1a32 0%, #112040 100%);
@@ -100,14 +100,27 @@ a[href*="linkedin"].btn:hover {
 }
 
 /* GitHub */
-.btn-dark.github-btn:hover,
-.contact .btn-dark:hover {
-  background: transparent;
-  color: var(--accent);
-  border: 2px solid var(--accent);
-  transition: all 0.2s;
+a[href*="github"].btn-dark {
+  transition: background-color 0.2s, border-color 0.2s;
 }
 
+a[href*="github"].btn-dark:hover {
+  background: #232323 !important; /* slightly darker */
+  border-color: #232323 !important;
+}
+
+.dark a[href*="github"].btn-dark {
+  background: #f1f1f1 !important; /* lighter in dark mode */
+  border-color: #f1f1f1 !important;
+  color: #121212 !important;
+}
+
+.dark a[href*="github"].btn-dark:hover {
+  background: #e0e0e0 !important;
+  border-color: #e0e0e0 !important;
+}
+
+/* Outline buttons */
 .dark .btn-outline-dark {
   color: var(--text-light);
   border-color: var(--text-light);
@@ -134,11 +147,14 @@ a[href*="linkedin"].btn:hover {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
+/* slightly zoomed-out image to reduce cropping */
 .project-image {
   width: 100%;
   aspect-ratio: 16 / 9;
   height: auto;
-  object-fit: cover;
+  object-fit: contain;
+  padding: 4px;
+  background: #000;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
 }
@@ -162,7 +178,8 @@ a[href*="linkedin"].btn:hover {
   color: var(--text-light);
 }
 
-.dark .contact p {
+.dark .contact p,
+.dark .contact .text-muted {
   color: #d0d0d0;
 }
 
