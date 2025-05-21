@@ -73,6 +73,15 @@ body {
   color: var(--text-light) !important;
 }
 
+/* dark-mode hamburger (white lines + light border) */
+.dark .navbar-light .navbar-toggler-icon {
+  /* overrides default svg */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255,255,255,0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+.dark .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
 /* -------------------------------------------------------
    Buttons
 ------------------------------------------------------- */
@@ -82,18 +91,15 @@ a[href*="linkedin"].btn {
   border-color: var(--linkedin) !important;
   color: #fff !important;
 }
-
 a[href*="linkedin"].btn:hover {
   background: #084d94 !important;
   border-color: #084d94 !important;
 }
-
 .dark a[href*="linkedin"].btn {
   background: var(--linkedin-dark) !important;
   border-color: var(--linkedin-dark) !important;
   color: #121212 !important;
 }
-
 .dark a[href*="linkedin"].btn:hover {
   background: #8cc4ff !important;
   border-color: #8cc4ff !important;
@@ -103,18 +109,15 @@ a[href*="linkedin"].btn:hover {
 a[href*="github"].btn-dark {
   transition: background-color 0.2s, border-color 0.2s;
 }
-
 a[href*="github"].btn-dark:hover {
-  background: #343a40 !important;
+  background: #343a40 !important; /* lighter on hover (light-mode) */
   border-color: #343a40 !important;
 }
-
 .dark a[href*="github"].btn-dark {
-  background: #f1f1f1 !important; /* lighter in dark mode */
+  background: #f1f1f1 !important;
   border-color: #f1f1f1 !important;
   color: #121212 !important;
 }
-
 .dark a[href*="github"].btn-dark:hover {
   background: #e0e0e0 !important;
   border-color: #e0e0e0 !important;
@@ -125,7 +128,6 @@ a[href*="github"].btn-dark:hover {
   color: var(--text-light);
   border-color: var(--text-light);
 }
-
 .dark .btn-outline-dark:hover {
   background: var(--text-light);
   color: var(--bg-dark);
@@ -141,13 +143,12 @@ a[href*="github"].btn-dark:hover {
   border-radius: 6px;
   background: #ffffff;
 }
-
 .project-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* slightly zoomed-out image to reduce cropping */
+/* reduced cropping, keeps full width */
 .project-image {
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -178,9 +179,10 @@ a[href*="github"].btn-dark:hover {
   color: var(--text-light);
 }
 
+/* force white text over Bootstrap .text-muted */
 .dark .contact p,
 .dark .contact .text-muted {
-  color: var(--text-light);
+  color: var(--text-light) !important;
 }
 
 /* -------------------------------------------------------
@@ -191,7 +193,6 @@ a[href*="github"].btn-dark:hover {
   transform: translateY(30px);
   transition: all 0.6s ease;
 }
-
 .reveal.show {
   opacity: 1;
   transform: none;
@@ -204,7 +205,6 @@ a[href*="github"].btn-dark:hover {
   background: #f8f9fa;
   color: #6c757d;
 }
-
 .dark .footer {
   background: var(--bg-dark-alt);
   color: #999;
@@ -228,17 +228,7 @@ a[href*="github"].btn-dark:hover {
   pointer-events: none;
   transition: opacity 0.3s;
 }
-
 #backToTop.visible {
   opacity: 1;
   pointer-events: auto;
-}
-
-/* hamburger icon & border visible in dark mode */
-.dark .navbar-light .navbar-toggler-icon {
-  filter: invert(1) brightness(2); /* turns the lines white */
-}
-
-.dark .navbar-toggler {
-  border-color: rgba(255, 255, 255, 0.6); /* lighter border */
 }
