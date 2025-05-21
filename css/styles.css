@@ -1,5 +1,5 @@
 /* -------------------------------------------------------
-   Global
+   Root Variables
 ------------------------------------------------------- */
 :root {
   --accent: #0d6efd; /* Bootstrap blue */
@@ -8,17 +8,22 @@
   --bg-dark-grad: linear-gradient(135deg, #0d1a32 0%, #112040 100%);
   --text-light: #f1f1f1;
   --linkedin: #0a66c2;
-  --linkedin-dark: #6eb0ff; /* visible on dark bg */
+  --linkedin-dark: #6eb0ff;
 }
 
+/* -------------------------------------------------------
+   Base
+------------------------------------------------------- */
 html {
   scroll-behavior: smooth;
 }
+
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: #fefefe;
   color: #212529;
 }
+
 .dark {
   background: var(--bg-dark);
   color: var(--text-light);
@@ -33,8 +38,18 @@ body {
   padding: 100px 0;
   text-align: center;
 }
+
 .dark .hero {
   background: var(--bg-dark-grad);
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+.hero p {
+  font-size: 1.25rem;
+  margin-top: 15px;
 }
 
 /* -------------------------------------------------------
@@ -43,13 +58,16 @@ body {
 .navbar-light .navbar-nav .nav-link {
   transition: color 0.2s;
 }
+
 .nav-link.active {
   font-weight: 600;
   border-bottom: 2px solid var(--accent);
 }
+
 .dark .navbar-light {
   background: var(--bg-dark-alt) !important;
 }
+
 .dark .navbar-light .navbar-nav .nav-link,
 .dark .navbar-brand {
   color: var(--text-light) !important;
@@ -58,30 +76,30 @@ body {
 /* -------------------------------------------------------
    Buttons
 ------------------------------------------------------- */
-/* LinkedIn brand button */
-.btn-linkedin {
-  background: var(--linkedin);
-  border-color: var(--linkedin);
-  color: #fff;
-}
-.btn-linkedin:hover {
-  background: #084d94;
-  border-color: #084d94;
-  color: #fff;
-}
-/* dark-mode ⇆ קונטרסט */
-.dark .btn-linkedin {
-  background: var(--linkedin-dark);
-  border-color: var(--linkedin-dark);
-  color: #121212;
-}
-.dark .btn-linkedin:hover {
-  background: #8cc4ff;
-  border-color: #8cc4ff;
-  color: #121212;
+/* LinkedIn */
+a[href*="linkedin"].btn {
+  background: var(--linkedin) !important;
+  border-color: var(--linkedin) !important;
+  color: #fff !important;
 }
 
-/* GitHub buttons */
+a[href*="linkedin"].btn:hover {
+  background: #084d94 !important;
+  border-color: #084d94 !important;
+}
+
+.dark a[href*="linkedin"].btn {
+  background: var(--linkedin-dark) !important;
+  border-color: var(--linkedin-dark) !important;
+  color: #121212 !important;
+}
+
+.dark a[href*="linkedin"].btn:hover {
+  background: #8cc4ff !important;
+  border-color: #8cc4ff !important;
+}
+
+/* GitHub */
 .btn-dark.github-btn:hover,
 .contact .btn-dark:hover {
   background: transparent;
@@ -89,11 +107,12 @@ body {
   border: 2px solid var(--accent);
   transition: all 0.2s;
 }
-/* improve dark-mode contrast */
+
 .dark .btn-outline-dark {
   color: var(--text-light);
   border-color: var(--text-light);
 }
+
 .dark .btn-outline-dark:hover {
   background: var(--text-light);
   color: var(--bg-dark);
@@ -103,23 +122,27 @@ body {
    Project Cards
 ------------------------------------------------------- */
 .project-card {
-  transition: transform 0.2s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
   border: none;
   border-radius: 6px;
   background: #ffffff;
 }
+
 .project-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .project-image {
   width: 100%;
   aspect-ratio: 16 / 9;
+  height: auto;
   object-fit: cover;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
 }
+
 .dark .project-card {
   background: var(--bg-dark-alt);
   color: var(--text-light);
@@ -131,10 +154,14 @@ body {
 .contact {
   background: #f8f9fa;
 }
+
+.dark #contact,
+.dark section#contact,
 .dark .contact {
-  background: var(--bg-dark-grad);
+  background: var(--bg-dark-grad) !important;
   color: var(--text-light);
 }
+
 .dark .contact p {
   color: #d0d0d0;
 }
@@ -147,6 +174,7 @@ body {
   transform: translateY(30px);
   transition: all 0.6s ease;
 }
+
 .reveal.show {
   opacity: 1;
   transform: none;
@@ -159,6 +187,7 @@ body {
   background: #f8f9fa;
   color: #6c757d;
 }
+
 .dark .footer {
   background: var(--bg-dark-alt);
   color: #999;
@@ -182,6 +211,7 @@ body {
   pointer-events: none;
   transition: opacity 0.3s;
 }
+
 #backToTop.visible {
   opacity: 1;
   pointer-events: auto;
