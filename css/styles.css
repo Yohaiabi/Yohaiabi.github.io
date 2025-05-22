@@ -7,8 +7,6 @@
   --bg-dark-alt: #1e1e1e;
   --bg-dark-grad: linear-gradient(135deg, #0d1a32 0%, #112040 100%);
   --text-light: #f1f1f1;
-  --linkedin: #0a66c2;
-  --linkedin-dark: #6eb0ff;
 }
 
 /* -------------------------------------------------------
@@ -80,57 +78,6 @@ body {
 }
 .dark .navbar-toggler {
   border-color: rgba(255, 255, 255, 0.7);
-}
-
-/* -------------------------------------------------------
-   Buttons
-------------------------------------------------------- */
-/* LinkedIn */
-a[href*="linkedin"].btn {
-  background: var(--linkedin) !important;
-  border-color: var(--linkedin) !important;
-  color: #fff !important;
-}
-a[href*="linkedin"].btn:hover {
-  background: #084d94 !important;
-  border-color: #084d94 !important;
-}
-.dark a[href*="linkedin"].btn {
-  background: var(--linkedin-dark) !important;
-  border-color: var(--linkedin-dark) !important;
-  color: #121212 !important;
-}
-.dark a[href*="linkedin"].btn:hover {
-  background: #8cc4ff !important;
-  border-color: #8cc4ff !important;
-}
-
-/* GitHub */
-a[href*="github"].btn-dark {
-  transition: background-color 0.2s, border-color 0.2s;
-}
-a[href*="github"].btn-dark:hover {
-  background: #343a40 !important; /* lighter on hover (light-mode) */
-  border-color: #343a40 !important;
-}
-.dark a[href*="github"].btn-dark {
-  background: #f1f1f1 !important;
-  border-color: #f1f1f1 !important;
-  color: #121212 !important;
-}
-.dark a[href*="github"].btn-dark:hover {
-  background: #e0e0e0 !important;
-  border-color: #e0e0e0 !important;
-}
-
-/* Outline buttons */
-.dark .btn-outline-dark {
-  color: var(--text-light);
-  border-color: var(--text-light);
-}
-.dark .btn-outline-dark:hover {
-  background: var(--text-light);
-  color: var(--bg-dark);
 }
 
 /* -------------------------------------------------------

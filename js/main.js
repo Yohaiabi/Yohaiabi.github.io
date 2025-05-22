@@ -1,3 +1,6 @@
+document.addEventListener("DOMContentLoaded", () => {
+  updateButtonsTheme();
+});
 // -------- Scroll-Reveal ----------
 const io = new IntersectionObserver(
   (entries) => {
@@ -46,6 +49,7 @@ if (localStorage.getItem("theme") === "dark") body.classList.add("dark");
 themeToggle?.addEventListener("click", () => {
   body.classList.toggle("dark");
   localStorage.setItem("theme", body.classList.contains("dark") ? "dark" : "");
+  updateButtonsTheme();
 });
 
 // keyboard accessibility for theme toggle
@@ -53,6 +57,7 @@ themeToggle?.addEventListener("keydown", (e) => {
   if (e.key === " " || e.key === "Enter") {
     e.preventDefault();
     themeToggle.click();
+    updateButtonsTheme();
   }
 });
 
@@ -64,6 +69,27 @@ window.addEventListener("scroll", () => {
 backBtn.addEventListener("click", () =>
   window.scrollTo({ top: 0, behavior: "smooth" })
 );
+
+// --- Handle Dark and default color linkedin btn and GitHub btns ---
+function updateButtonsTheme() {
+  const isDark = document.body.classList.contains("dark");
+
+  // GitHub buttons
+  const githubButtons = document.querySelectorAll(".github-btn");
+  githubButtons.forEach((btn) => {
+    btn.classList.remove(
+      isDark ? "btn-outline-secondary" : "btn-outline-light"
+    );
+    btn.classList.add(isDark ? "btn-outline-light" : "btn-outline-secondary");
+  });
+
+  // LinkedIn button
+  const linkedinBtn = document.querySelector(".linkedin-btn");
+  if (linkedinBtn) {
+    linkedinBtn.classList.remove(isDark ? "btn-primary" : "btn-light");
+    linkedinBtn.classList.add(isDark ? "btn-light" : "btn-primary");
+  }
+}
 
 // --- Dynamic year in footer ---
 document.getElementById("year").textContent = new Date().getFullYear();
