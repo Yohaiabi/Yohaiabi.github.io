@@ -98,13 +98,17 @@ body {
 /* reduced cropping, keeps full width */
 .project-image {
   width: 100%;
-  aspect-ratio: 16 / 9;
-  height: auto;
-  object-fit: contain;
-  padding: 4px;
-  background: #000;
+  height: 220px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
+}
+@media (min-width: 992px) {
+  .project-image {
+    height: 260px;
+  }
 }
 
 .dark .project-card {
