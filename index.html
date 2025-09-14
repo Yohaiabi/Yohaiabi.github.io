@@ -35,6 +35,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="css/styles.css" />
     <script type="application/ld+json">
       {
@@ -62,6 +66,15 @@
           Yohai Abramovitz
         </a>
 
+        <!-- Dark-mode toggle for mobile (before menu) -->
+        <button
+          id="themeToggleMobile"
+          class="btn btn-outline-secondary btn-sm d-lg-none me-2"
+          aria-label="Toggle dark mode"
+        >
+          🌙
+        </button>
+
         <button
           class="navbar-toggler"
           type="button"
@@ -80,15 +93,15 @@
               <a class="nav-link" href="#contact">Contact</a>
             </li>
           </ul>
+          <!-- Dark-mode toggle for desktop -->
+          <button
+            id="themeToggle"
+            class="btn btn-outline-secondary btn-sm d-none d-lg-block ms-2"
+            aria-label="Toggle dark mode"
+          >
+            🌙
+          </button>
         </div>
-        <!-- Dark-mode toggle -->
-        <button
-          id="themeToggle"
-          class="btn btn-outline-secondary btn-sm ms-2"
-          aria-label="Toggle dark mode"
-        >
-          🌙
-        </button>
       </div>
     </nav>
 
@@ -98,24 +111,86 @@
       <div class="container">
         <h1 class="display-4 fw-bold mb-2">Yohai Abramovitz</h1>
         <p class="lead mb-3">
-          Information Systems Graduate &nbsp; | &nbsp; Data Science &amp;
-          Computer Vision &amp; AI
-        </p>
-
-        <p
-          class="personal-summary mx-auto"
-          style="max-width: 680px; line-height: 1.6"
-        >
-          <strong>Python</strong>, SQL, Machine Learning & Computer Vision
-          <strong>(YOLO)</strong>, REST APIs with Flask, Vue.js front-ends,
-          Nginx/Gunicorn, FFmpeg, <strong>CI/CD</strong> with GitHub Actions,
-          cloud on Vercel & Oracle Cloud, and analytics with
-          <strong>Power BI</strong>.
+          Information Systems Graduate &nbsp; | &nbsp; Data Science
         </p>
 
         <a href="#projects" class="btn btn-primary mt-3">View Projects</a>
       </div>
     </header>
+
+    <!-- ===== Skills Carousel ===== -->
+    <section id="skills" class="skills-carousel py-5">
+      <div class="container">
+        <h2 class="text-center mb-5 reveal">Technologies & Skills</h2>
+        <div class="skills-track">
+          <div class="skill-item">
+            <i class="fab fa-python"></i>
+            <span>Python</span>
+          </div>
+          <div class="skill-item">
+            <i class="fab fa-java"></i>
+            <span>Java</span>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-chart-line"></i>
+            <span>R</span>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-database"></i>
+            <span>SQL</span>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-brain"></i>
+            <span>Machine Learning</span>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-network-wired"></i>
+            <span>Deep Learning</span>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-eye"></i>
+            <span>Computer Vision</span>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-chart-bar"></i>
+            <span>Power BI</span>
+          </div>
+          <!-- Duplicate for seamless loop -->
+          <div class="skill-item">
+            <i class="fab fa-python"></i>
+            <span>Python</span>
+          </div>
+          <div class="skill-item">
+            <i class="fab fa-java"></i>
+            <span>Java</span>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-chart-line"></i>
+            <span>R</span>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-database"></i>
+            <span>SQL</span>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-brain"></i>
+            <span>Machine Learning</span>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-network-wired"></i>
+            <span>Deep Learning</span>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-eye"></i>
+            <span>Computer Vision</span>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-chart-bar"></i>
+            <span>Power BI</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- ===== Projects ===== -->
     <section id="projects" class="py-5">

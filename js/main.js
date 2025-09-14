@@ -26,17 +26,17 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
 });
 
 const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
-const sections = Array.from(navLinks).map((l) =>
-  document.querySelector(l.hash)
-);
+const sections = Array.from(navLinks)
+  .map((l) => document.querySelector(l.hash))
+  .filter((sec) => sec !== null); // Filter out null sections
 
 window.addEventListener("scroll", () => {
   const pos = window.scrollY + 80; // offset for navbar
   sections.forEach((sec, i) => {
-    if (sec.offsetTop <= pos && sec.offsetTop + sec.offsetHeight > pos) {
-      navLinks[i].classList.add("active");
+    if (sec && sec.offsetTop <= pos && sec.offsetTop + sec.offsetHeight > pos) {
+      navLinks[i]?.classList.add("active");
     } else {
-      navLinks[i].classList.remove("active");
+      navLinks[i]?.classList.remove("active");
     }
   });
 });
@@ -44,21 +44,26 @@ window.addEventListener("scroll", () => {
 // -------- Dark-Mode Toggle ----------
 const body = document.body;
 const themeToggle = document.getElementById("themeToggle");
+const themeToggleMobile = document.getElementById("themeToggleMobile");
 if (localStorage.getItem("theme") === "dark") body.classList.add("dark");
 
-themeToggle?.addEventListener("click", () => {
+function toggleTheme() {
   body.classList.toggle("dark");
   localStorage.setItem("theme", body.classList.contains("dark") ? "dark" : "");
   updateButtonsTheme();
-});
+}
 
-// keyboard accessibility for theme toggle
-themeToggle?.addEventListener("keydown", (e) => {
-  if (e.key === " " || e.key === "Enter") {
-    e.preventDefault();
-    themeToggle.click();
-    updateButtonsTheme();
-  }
+themeToggle?.addEventListener("click", toggleTheme);
+themeToggleMobile?.addEventListener("click", toggleTheme);
+
+// keyboard accessibility for theme toggles
+[themeToggle, themeToggleMobile].forEach((toggle) => {
+  toggle?.addEventListener("keydown", (e) => {
+    if (e.key === " " || e.key === "Enter") {
+      e.preventDefault();
+      toggle.click();
+    }
+  });
 });
 
 // -------- Back-to-Top ----------
@@ -93,3 +98,59 @@ function updateButtonsTheme() {
 
 // --- Dynamic year in footer ---
 document.getElementById("year").textContent = new Date().getFullYear();
+
+// --- Skills Carousel Enhancement ---
+document.addEventListener("DOMContentLoaded", () => {
+  const skillsCarousel = document.querySelector(".skills-carousel");
+  const skillsTrack = document.querySelector(".skills-track");
+
+  if (skillsCarousel && skillsTrack) {
+    // Add intersection observer for skills carousel
+    const skillsObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            // Resume animation when visible
+            skillsTrack.style.animationPlayState = "running";
+          } else {
+            // Pause animation when not visible for performance
+            skillsTrack.style.animationPlayState = "paused";
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    skillsObserver.observe(skillsCarousel);
+
+    // Add hover events to pause/resume animation
+    skillsCarousel.addEventListener("mouseenter", () => {
+      skillsTrack.style.animationPlayState = "paused";
+    });
+
+    skillsCarousel.addEventListener("mouseleave", () => {
+      skillsTrack.style.animationPlayState = "running";
+    });
+
+    skillsTrack.addEventListener("mouseenter", () => {
+      skillsTrack.style.animationPlayState = "paused";
+    });
+
+    skillsTrack.addEventListener("mouseleave", () => {
+      skillsTrack.style.animationPlayState = "running";
+    });
+
+    // Add click handlers for skill items
+    const skillItems = document.querySelectorAll(".skill-item");
+    skillItems.forEach((item) => {
+      item.addEventListener("click", () => {
+        // Add a subtle pulse effect on click
+        item.style.transform = "translateY(-5px) scale(1.05)";
+        setTimeout(() => {
+          item.style.transform = "";
+        }, 200);
+      });
+    });
+  }
+});
